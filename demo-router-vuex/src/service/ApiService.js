@@ -14,3 +14,14 @@ export const getProducts = () => {
 export const getProduct = (id) => {
     return products.find(e => e.id == id)
 }
+
+
+export const addProductApi = (product) => {
+    return new Promise((resolve)=> {
+        setTimeout(()=> {
+            product.id = products.length + 1
+            products.push(product)
+            resolve(product)
+        }, 3000)
+    }) 
+}
